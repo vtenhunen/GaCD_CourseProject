@@ -2,6 +2,8 @@
 
 ## General overview
 
+This in material for the Course Project of the JHU's Data Science Specialization course *Getting and Cleaning Data* (getdata-032).
+
 This project submit: 
 
 1. a tidy data set as described below,
