@@ -27,9 +27,9 @@ A full description of the data is on web page end therefore it is good idea to u
 
 Data is in the zip-file. Getting and opening the zip-file.
 
-*fileUrl1 = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"*
-*download.file(fileUrl1, destfile="./UCI_HAR_Dataset.zip")*
-*unzip("UCI_HAR_Dataset.zip")*
+      fileUrl1 = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+      download.file(fileUrl1, destfile="./UCI_HAR_Dataset.zip")
+      unzip("UCI_HAR_Dataset.zip")
 
 This creates folder called *UCI HAR Dataset* where all data files are. 
 
