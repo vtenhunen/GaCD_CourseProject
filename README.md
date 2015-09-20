@@ -36,7 +36,7 @@ From the data set in step 4, creates a second, independent tidy data set with th
 
 ## Scripts and their connections
 
-Mergning
+Merge sets
 
 Extraction
 
