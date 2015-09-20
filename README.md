@@ -49,12 +49,13 @@ Labels
 
 Original data is made by
 
-Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.\n
-Smartlab - Non Linear Complex Systems Laboratory\n
-DITEN - Universitá degli Studi di Genova.\n
-Via Opera Pia 11A, I-16145, Genoa, Italy.\n
-activityrecognition@smartlab.ws\n
-www.smartlab.ws
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.   
+Smartlab - Non Linear Complex Systems Laboratory  
+DITEN - Universitá degli Studi di Genova.  
+Via Opera Pia 11A, I-16145, Genoa, Italy.  
+activityrecognition@smartlab.ws  
+www.smartlab.ws  
+
 
 ## End note
 
