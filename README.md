@@ -45,9 +45,21 @@ Labels
 
 
 
+## Credits
+
+Original data is made by
+
+Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
+Smartlab - Non Linear Complex Systems Laboratory
+DITEN - Universit? degli Studi di Genova.
+Via Opera Pia 11A, I-16145, Genoa, Italy.
+activityrecognition@smartlab.ws
+www.smartlab.ws
 
 ## End note
 
 For Data Science Specialition course Getting and Cleanind Data created by vtenhunen.
+
+
 
 
