@@ -41,6 +41,46 @@ Files and explanation of files by README.txt of the data set:
 * train/X_train.txt: Training set.
 * train/y_train.txt: Training labels.  
 
+## Prerequisites
+
+* installed packages: data.table
+
+
+
+## Read data
+
+In this case we use *data.table* package to handle the data set.
+
+      library(data.table)
+
+Paths to the subject files
+
+      path_subject_train <- file.path(wd,directory,"train","subject_train.txt")
+      path_subject_test <- file.path(wd,directory,"test","subject_test.txt")
+
+Paths to the activity files
+
+      path_activity_train <- file.path(wd,directory,"train","y_train.txt")
+      path_activity_test <- file.path(wd,directory,"test","y_test.txt")
+      
+Paths to the data files
+
+      path_activity_data <- file.path(wd,directory,"train","X_train.txt")
+      path_activity_data <- file.path(wd,directory,"test","X_test.txt")      
+
+Read data to tables
+
+      table_subject_train <- fread(path_subject_train)
+      table_subject_test <- fread(path_subject_test)
+      table_activity_train <- fread(path_activity_train)
+      table_activity_test <- fread(path_activity_test)
+      
+Some reason these freads of data files goes to overflow, so use read.table and data.table
+
+      table_data_train <- data.table(read.table(path_data_train))
+      table_data_test <- data.table(read.table(path_data_test)) 
+
+Now we have all data in tables
 
 ### Cleaned data
 
