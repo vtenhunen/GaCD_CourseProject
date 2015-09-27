@@ -66,15 +66,24 @@ run_analysis <- function (directory="UCI HAR Dataset") {
       table_subject_all <- cbind(table_subject_all, table_activity_all)
       table_data_all <- cbind(table_data_all, table_subject_all)
       
-      # Now we have all in one table
+      # Now we have all for this project in one table
 
       # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
       # The next step is to extract measurements on the mean and standard deviation for each measurement      
+ 
+      # first get the mean values
+      v_means <- grep("mean()", names(table_data_all))
+      table_means <- table_data_all[, v_means, with = FALSE]
       
+      # then get the standrad deviation values
+      v_stds <- grep("std()", names(table_data_all))
+      table_stds <- table_data_all[, v_stds, with = FALSE]
       
-      
-      
-      ## 3. Descitptive names and extraction of means and std deviations
+      # combine this and we have table for measurements on the mean and standard deviation for each measurement
+      # and descriptive names to columns (3. Descitptive names and extraction of means and std deviations)
+
+      table_extracted <- cbind(table_means, table_stds)
+
       # 4. Appropriately labels the data set with descriptive variable names. 
       # 5. From the data set in step 4, creates a second, independent tidy data set with the 
       #    average of each variable for each activity and each subject.
