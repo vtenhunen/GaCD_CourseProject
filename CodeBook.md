@@ -75,14 +75,43 @@ Read data to tables
       table_activity_train <- fread(path_activity_train)
       table_activity_test <- fread(path_activity_test)
       
-Some reason these freads of data files goes to overflow, so use read.table and data.table
+Some reason freads of data files goes to overflow, so use read.table and data.table
 
       table_data_train <- data.table(read.table(path_data_train))
       table_data_test <- data.table(read.table(path_data_test)) 
 
-Now we have all data in tables
+Now we have all data in tables, which we like to concatenate as own tables
 
-### Cleaned data
+      table_subject_all <- rbind(table_subject_train, table_subject_test)
+      table_activity_all <- rbind(table_activity_train, table_activity_test)
+      table_data_all <- rbind(table_data_train, table_data_test)
+      
+Set up names to columns. First get the list of features from the file
+
+      path_features <- file.path(wd, directory, "features.txt")
+      table_features <- fread(path_features)
+      
+Create variables old_names and new_names, which have values from tables      
+      
+      old_names <- names(table_data_all)
+      new_names <- table_features$V2
+      
+Set names to tables
+
+      setnames(table_data_all, old_names, new_names)
+      setnames(table_subject_all, "V1", "Subjects")
+      setnames(table_activity_all, "V1", "ActivityNumbers")
+      
+Then merge columns subject and activity to data with two phases
+
+      table_subject_all <- cbind(table_subject_all, table_activity_all)
+      table_data_all <- cbind(table_data_all, table_subject_all)
+      
+Now we have all in one table and columns have descriptive names
+
+
+
+
 
 
 
