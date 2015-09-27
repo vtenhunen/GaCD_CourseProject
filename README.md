@@ -101,9 +101,9 @@ Some reason freads of data files goes to overflow, so use read.table and data.ta
       table_data_train <- data.table(read.table(path_data_train))
       table_data_test <- data.table(read.table(path_data_test)) 
 
-# 1. Merges the training and the test sets to create one data set.
+## 1. Merges the training and the test sets to create one data set
 
-## Concatenate tables
+### Concatenate tables
 
 Now we have all data in tables, which we like to concatenate as own tables
 
@@ -112,7 +112,7 @@ Now we have all data in tables, which we like to concatenate as own tables
       table_data_all <- rbind(table_data_train, table_data_test)
       
       
-## Names of columns
+### Names of columns
 
 Set up names to columns. First get the list of features from the file
 
@@ -130,7 +130,7 @@ Set names to tables
       setnames(table_subject_all, "V1", "Subject")
       setnames(table_activity_all, "V1", "Activity"")
 
-## Merge columns and descriptive names
+### Merge columns and descriptive names
       
 Then merge columns subject and activity to data with two phases
 
@@ -139,9 +139,9 @@ Then merge columns subject and activity to data with two phases
       
 Now we have all in one table and columns have names
 
-# 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+## 2. Extracts only the measurements on the mean and standard deviation for each measurement
 
-## Extract mean and strandard deviation
+### Extract mean and strandard deviation
 
 Netx step is extract only the measurements on the mean and standard deviation for each measurement.
 
@@ -159,7 +159,7 @@ Combine this and we have table for measurements on the mean and standard deviati
 
       table_extracted <- cbind(table_subject_all, table_means, table_stds)
 
-# 3. Uses descriptive activity names to name the activities in the data set
+## 3. Uses descriptive activity names to name the activities in the data set
 
 Get activity names
 
@@ -178,7 +178,7 @@ Change values in *table_extracted*
 
 Now activity names are readable in the Activity column
 
-# 4. Appropriately labels the data set with descriptive variable names. 
+## 4. Appropriately labels the data set with descriptive variable names 
 
       # Change the code of the subject to the descriptive values:
       # By README.txt -file of the original data set, there was group of 30 volunteers
@@ -223,7 +223,7 @@ Then we make some other parts of variablenames better readable
       names(table_extracted)<-gsub("Mag", "Magnitude", names(table_extracted))
       names(table_extracted)<-gsub("BodyBody", "Body", names(table_extracted))
       
-# 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+## 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 
 Create the tidy data set
 
@@ -235,7 +235,7 @@ Writing it to the working directory
       write.table(table_tidy, file="TidyDataSet.txt", sep="\t", row.name = FALSE)
 
 
-## Acknowledgment and licence
+# Acknowledgment and licence
 
 Original data: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
@@ -243,6 +243,6 @@ This dataset is distributed AS-IS and no responsibility implied or explicit can 
 
 Jorge L. Reyes-Ortiz, Alessandro Ghio, Luca Oneto, Davide Anguita. November 2012.
 
-## End note
+# End note
 
 For Data Science Specialition course Getting and Cleanind Data created by vtenhunen.
