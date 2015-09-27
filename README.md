@@ -69,7 +69,8 @@ In this case we use *data.table* package to handle the data set.
       library(data.table)
       library(plyr)
       library(dplyr)
-
+      library(reshape2)
+      
 Working directory path is in the variable *wd*
 
       wd <- getwd()
