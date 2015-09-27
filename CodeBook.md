@@ -53,6 +53,10 @@ In this case we use *data.table* package to handle the data set.
 
       library(data.table)
 
+Working directory path is in the variable *wd*
+
+      wd <- getwd()
+
 Paths to the subject files
 
       path_subject_train <- file.path(wd,directory,"train","subject_train.txt")
@@ -65,8 +69,8 @@ Paths to the activity files
       
 Paths to the data files
 
-      path_activity_data <- file.path(wd,directory,"train","X_train.txt")
-      path_activity_data <- file.path(wd,directory,"test","X_test.txt")      
+      path_data_train <- file.path(wd,directory,"train","X_train.txt")
+      path_data_test <- file.path(wd,directory,"test","X_test.txt")
 
 Read data to tables
 
